@@ -1,6 +1,6 @@
 # EmberRailsFlash
 
-Make Rails' flash messages available to Ember.js applications.
+Make Rails' flash messages available to Ember.js applications. Inspired by a [Blog post by Stefan Siebel](http://blog.project-sierra.de/archives/1808).
 
 ## Installation
 
