@@ -1,0 +1,2 @@
+module EmberRailsFlash
+end
