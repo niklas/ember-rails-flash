@@ -37,7 +37,7 @@ MyApp.Messages = Ember.Rails.FlashListView.extend
 
 ```handlebars
 <h1>My new App</h1>
-{{MyApp.Messages}}
+{{view MyApp.Messages}}
 
 ## FAQ
 
@@ -48,6 +48,10 @@ I love [CoffeeScript](http://coffeescript.org) as it keeps the bad parts out of 
 ### This is not the way to write Ember.js related plugins
 
 I really don't know a better way. If you have one, please send me a pull request :)
+
+### You are using Ember.js wrong!
+
+Still learning, please educate me - SRSLY.
 
 
 ## Contributing
