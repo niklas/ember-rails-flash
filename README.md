@@ -43,6 +43,10 @@ MyApp.Messages = Ember.Rails.FlashListView.extend
 
 ## FAQ
 
+### Where are your tests?
+
+Tests? What the frak are tests? - Will come .. soon.. ish
+
 ### Coffeescript? Why?
 
 I love [CoffeeScript](http://coffeescript.org) as it keeps the bad parts out of my JS.
