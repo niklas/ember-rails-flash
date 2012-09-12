@@ -54,5 +54,5 @@ I really don't know a better way. If you have one, please send me a pull request
 
 Feel free to open an issue ticket if you find something that could be improved.
 
-This project rocks and uses MIT-LICENSE.
+This project rocks and uses GPL-3 as license.
 
