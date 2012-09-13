@@ -4,11 +4,15 @@ Make Rails' flash messages available to Ember.js applications. Inspired by a [Bl
 
 ## Installation
 
+### Gem
+
 Add the ember-rails-flash gem to your Gemfile (not released as .gem file yet).
 
 ```ruby
 gem 'ember-rails-flash', git: 'git://github.com/niklas/ember-rails-flash.git'
 ```
+
+### Controllers
 
 Include EmberRailsFlash::FlashInHeader in (all) the controller(s) dealing with Ember.js. ApplicationController is totally fine.
 
@@ -19,12 +23,16 @@ class ApplicationController < ActionController::Base
 end
 ```
 
+### Asset Pipeline
+
 Add the javascripts to your asset pipeline (for example application.js), preferrably after ember itself.
 ```css
 //= require handlebars
 //= require ember
 //= require ember-rails-flash
 ```
+
+### Ember.js
 
 Now, you can use the provided view directly in your templates or extend them.
 
@@ -40,6 +48,8 @@ MyApp.Messages = Ember.Rails.FlashListView.extend
 ```handlebars
 <h1>My new App</h1>
 {{view MyApp.Messages}}
+
+### Enable flash messages for JSON responses
 
 If you use the `responders` gem (which you do if you use the `inherited_resources` gem), you may want to enable the FlashResponder. If you don't, the expected i_h flash messages will no be set on respond formats other than "html". So for example in `config/initializers/flash.rb`:
 
