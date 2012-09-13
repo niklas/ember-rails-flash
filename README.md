@@ -41,6 +41,12 @@ MyApp.Messages = Ember.Rails.FlashListView.extend
 <h1>My new App</h1>
 {{view MyApp.Messages}}
 
+If you use the `responders` gem (which you do if you use the `inherited_resources` gem), you may want to enable the FlashResponder. If you don't, the expected i_h flash messages will no be set on respond formats other than "html". So for example in `config/initializers/flash.rb`:
+
+```ruby
+EmberRailsFlash.enable_flash_responder 'json'
+```
+
 ## FAQ
 
 ### Where are your tests?
