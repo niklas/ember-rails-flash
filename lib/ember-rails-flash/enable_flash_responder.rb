@@ -1,5 +1,5 @@
 module EmberRailsFlash
-  def self.enable_flash_responder(format: 'json')
+  def self.enable_flash_responder(format='json')
     if defined?(Responders::FlashResponder)
       to_meth = :"to_#{format}"
       unless Responders::FlashResponder.public_instance_methods.include?(to_meth)
