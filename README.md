@@ -48,6 +48,7 @@ MyApp.Messages = Ember.Rails.FlashListView.extend
 ```handlebars
 <h1>My new App</h1>
 {{view MyApp.Messages}}
+```
 
 ### Enable flash messages for JSON responses
 
