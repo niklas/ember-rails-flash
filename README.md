@@ -41,8 +41,7 @@ MyApp.Messages = Ember.Rails.FlashListView.extend
   fnord: (->
     @get('content').fnordify()
   ).property('content')
-  template: null # template is defined inline
-  templateName: 'app/shared/flash'
+  itemViewClass: Ember.View.extend(template: "...")
 ```
 
 ```handlebars
