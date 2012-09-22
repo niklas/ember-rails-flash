@@ -9,7 +9,7 @@ Make Rails' flash messages available to Ember.js applications. Inspired by a [Bl
 Add the ember-rails-flash gem to your Gemfile (not released as .gem file yet).
 
 ```ruby
-gem 'ember-rails-flash', git: 'git://github.com/niklas/ember-rails-flash.git'
+gem 'ember-rails-flash'
 ```
 
 ### Controllers
