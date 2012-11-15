@@ -12,13 +12,10 @@ Ember.Rails.FlashItemView = Ember.View.extend
   {{/with}}
   """
 
-Ember.Rails.FlashListView = Ember.CollectionView.extend
-  tagName: 'div'
-  itemViewClass: Ember.Rails.FlashItemView
-  didInsertElement: ->
-    @$().ajaxComplete (event, request, settings) => @extractFlashFromHeaders request
-
-  content: []
+Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
+  init: ->
+    @_super()
+    jQuery('body').ajaxComplete (event, request, settings) => @extractFlashFromHeaders request
 
   extractFlashFromHeaders: (request)->
     headers = request.getAllResponseHeaders()
@@ -30,3 +27,10 @@ Ember.Rails.FlashListView = Ember.CollectionView.extend
     message = Ember.Rails.FlashMessage.create args
     @get('content').pushObject(message)
 
+Ember.Rails.flashMessages = Ember.Rails.FlashMessagesController.create
+  content: Ember.A()
+
+Ember.Rails.FlashListView = Ember.CollectionView.extend
+  tagName: 'div'
+  itemViewClass: Ember.Rails.FlashItemView
+  contentBinding: 'Ember.Rails.flashMessages'
