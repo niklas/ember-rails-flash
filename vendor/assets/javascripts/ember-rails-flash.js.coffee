@@ -15,7 +15,7 @@ Ember.Rails.FlashItemView = Ember.View.extend
 Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
   init: ->
     @_super()
-    jQuery('body').ajaxComplete (event, request, settings) => @extractFlashFromHeaders request
+    jQuery(document).ajaxComplete (event, request, settings) => @extractFlashFromHeaders request
 
   extractFlashFromHeaders: (request)->
     headers = request.getAllResponseHeaders()
