@@ -10,10 +10,10 @@ module EmberRailsFlash
           end
         EORUBY
       else
-        Rails.logger.debug { "Responders::FlashResponder##{to_meth} is already defined" }
+        ActiveRecord::Base.logger.debug { "Responders::FlashResponder##{to_meth} is already defined" }
       end
     else
-      Rails.logger.debug { "cannot find Responders::FlashResponder to enable flash on #{format}" }
+      ActiveRecord::Base.logger.debug { "cannot find Responders::FlashResponder to enable flash on #{format}" }
     end
   end
 end
