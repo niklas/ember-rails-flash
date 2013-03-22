@@ -1,6 +1,5 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-
 # Maintain your gem's version:
 require "ember-rails-flash/version"
 
@@ -18,7 +17,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.require_paths = ["lib"]
 
-  s.add_dependency "rails", "~> 4.0.0.beta"
+  s.add_dependency "rails", ">= 3.0"
   s.add_dependency "coffee-script"
 
   s.add_development_dependency "sqlite3"
