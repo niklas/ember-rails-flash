@@ -57,6 +57,22 @@ If you use the `responders` gem (which you do if you use the `inherited_resource
 EmberRailsFlash.enable_flash_responder 'json'
 ```
 
+### ember-cli
+
+First, install this repo throw bower:
+
+```bash
+ember install:bower https://github.com/niklas/ember-rails-flash.git
+```
+
+Then, just load the provided js from dist/ in your application's Brocfile.
+
+```javascript
+// to compile the inline template
+app.import('bower_components/ember/ember-template-compiler.js');
+app.import('bower_components/ember-rails-flash/dist/ember-rails-flash.js');
+```
+
 ## FAQ
 
 ### Where are your tests?
