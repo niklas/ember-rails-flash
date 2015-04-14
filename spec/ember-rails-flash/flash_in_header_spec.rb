@@ -34,6 +34,12 @@ describe EmberRailsFlash::FlashInHeader do
       response.headers['X-Flash-Alert'].should == 'Other Castle.'
     end
 
+    it 'escapes UTF8 as HTML entities' do
+      controller.flash[:notice] = 'Erfolgreich hinzugefügt'
+      controller.add_flash_to_header_if_xhr
+      response.headers['X-Flash-Notice'].should == 'Erfolgreich hinzugef&#252;gt'
+    end
+
   end
 
 end

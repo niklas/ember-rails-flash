@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 3.0"
   s.add_dependency "coffee-script"
+  s.add_dependency "htmlentities"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec-rails"
