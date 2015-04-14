@@ -15,4 +15,5 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 RSpec.configure do |config|
   config.mock_framework = :rspec
   config.expect_with(:rspec) { |c| c.syntax = [:should, :expect] }
+  config.mock_with(:rspec) { |c| c.syntax = [:should, :expect] }
 end
