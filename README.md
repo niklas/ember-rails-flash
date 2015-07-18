@@ -91,6 +91,18 @@ I really don't know a better way. If you have one, please send me a pull request
 
 Still learning, please educate me - SRSLY.
 
+### There a strange Characters in my Flash messages
+
+For example like &#252;
+
+We transport the flash messages thorugh HTTP headers, which only support ASCII
+encoding. So we encode the messages to HTML entities. To properly display these
+in your views, please use triple mustaches `{{{message}}}` for handlebars,
+triple equal signs `=== message` in Emblem or any other way which does not try
+to escape the given string.
+
+Caveat: You may now insert arbitrary JS and HTML in your flash messages.
+
 
 ## Contributing
 

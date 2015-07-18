@@ -1,3 +1,4 @@
+require 'htmlentities'
 module EmberRailsFlash
   # include this in your top-level controller (ApplicationController)
   module FlashInHeader
@@ -9,7 +10,7 @@ module EmberRailsFlash
     def add_flash_to_header_if_xhr
       if request.xhr?
         flash.each do |severity, message|
-          response.headers["X-Flash-#{severity.to_s.classify}"] = message
+          response.headers["X-Flash-#{severity.to_s.classify}"] = HTMLEntities.new.encode(message, :basic, :decimal)
         end
         # make sure flash does not appear on the next page
         flash.discard

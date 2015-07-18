@@ -6,11 +6,7 @@ Ember.Rails.FlashMessage = Ember.Object.extend
 
 Ember.Rails.FlashItemView = Ember.View.extend
   basicClassName: 'flash'
-  template: Ember.Handlebars.compile """
-  {{#with view.content}}
-    <div {{bindAttr class="view.basicClassName severity"}}>{{message}}</div>
-  {{/with}}
-  """
+  templateName: 'ember/rails/flash-item'
 
 Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
   init: ->
