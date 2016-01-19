@@ -4,10 +4,6 @@ Ember.Rails.FlashMessage = Ember.Object.extend
   severity: null
   message: ''
 
-Ember.Rails.FlashItemView = Ember.View.extend
-  basicClassName: 'flash'
-  templateName: 'ember/rails/flash-item'
-
 Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
   init: ->
     @_super()
@@ -25,8 +21,3 @@ Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
 
 Ember.Rails.flashMessages = Ember.Rails.FlashMessagesController.create
   content: Ember.A()
-
-Ember.Rails.FlashListView = Ember.CollectionView.extend
-  tagName: 'div'
-  itemViewClass: Ember.Rails.FlashItemView
-  contentBinding: 'Ember.Rails.flashMessages'

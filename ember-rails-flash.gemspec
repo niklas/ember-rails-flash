@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["niklas+dev@lanpartei.de"]
   s.homepage    = "http://niklas.github.com"
   s.summary     = "Rails' flash messages for Ember.js"
-  s.description = "Uses HTTP headers to transport Rails' flash messages to an Ember.View"
+  s.description = "Uses HTTP headers to transport Rails' flash messages to an Ember Controller. You have to write a component to display them yourself."
 
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["GPL-3", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
