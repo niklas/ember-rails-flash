@@ -11,12 +11,7 @@
     message: ''
   });
 
-  Ember.Rails.FlashItemView = Ember.View.extend({
-    basicClassName: 'flash',
-    template: Ember.Handlebars.compile("{{#with view.content}}\n  <div {{bindAttr class=\"view.basicClassName severity\"}}>{{message}}</div>\n{{/with}}")
-  });
-
-  Ember.Rails.FlashMessagesController = Ember.ArrayController.extend({
+  Ember.Rails.FlashMessagesController = Ember.Controller.extend({
     init: function() {
       var _this = this;
       this._super();
@@ -51,12 +46,6 @@
 
   Ember.Rails.flashMessages = Ember.Rails.FlashMessagesController.create({
     content: Ember.A()
-  });
-
-  Ember.Rails.FlashListView = Ember.CollectionView.extend({
-    tagName: 'div',
-    itemViewClass: Ember.Rails.FlashItemView,
-    contentBinding: 'Ember.Rails.flashMessages'
   });
 
 }).call(this);

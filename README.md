@@ -34,19 +34,11 @@ Add the javascripts to your asset pipeline (for example application.js), preferr
 
 ### Ember.js
 
-Now, you can use the provided view directly in your templates or extend them.
-
-```coffeescript
-MyApp.Messages = Ember.Rails.FlashListView.extend
-  fnord: (->
-    @get('content').fnordify()
-  ).property('content')
-  itemViewClass: Ember.View.extend(template: "...")
-```
+Now, you can use the provided controller directly in your templates or components.
 
 ```handlebars
 <h1>My new App</h1>
-{{view MyApp.Messages}}
+{{my-own-flash-list content=Ember.Rails.flashMessages.content}}
 ```
 
 ### Enable flash messages for JSON responses
@@ -69,7 +61,6 @@ Then, just load the provided js from dist/ in your application's Brocfile.
 
 ```javascript
 // to compile the inline template
-app.import('bower_components/ember/ember-template-compiler.js');
 app.import('bower_components/ember-rails-flash/dist/ember-rails-flash.js');
 ```
 

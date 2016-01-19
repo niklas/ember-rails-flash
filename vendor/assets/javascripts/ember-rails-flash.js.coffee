@@ -4,11 +4,7 @@ Ember.Rails.FlashMessage = Ember.Object.extend
   severity: null
   message: ''
 
-Ember.Rails.FlashItemView = Ember.View.extend
-  basicClassName: 'flash'
-  templateName: 'ember/rails/flash-item'
-
-Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
+Ember.Rails.FlashMessagesController = Ember.Controller.extend
   init: ->
     @_super()
     jQuery(document).ajaxComplete (event, request, settings) => @extractFlashFromHeaders request
@@ -25,8 +21,3 @@ Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
 
 Ember.Rails.flashMessages = Ember.Rails.FlashMessagesController.create
   content: Ember.A()
-
-Ember.Rails.FlashListView = Ember.CollectionView.extend
-  tagName: 'div'
-  itemViewClass: Ember.Rails.FlashItemView
-  contentBinding: 'Ember.Rails.flashMessages'
