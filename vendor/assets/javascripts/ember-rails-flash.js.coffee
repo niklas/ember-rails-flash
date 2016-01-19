@@ -4,7 +4,7 @@ Ember.Rails.FlashMessage = Ember.Object.extend
   severity: null
   message: ''
 
-Ember.Rails.FlashMessagesController = Ember.ArrayController.extend
+Ember.Rails.FlashMessagesController = Ember.Controller.extend
   init: ->
     @_super()
     jQuery(document).ajaxComplete (event, request, settings) => @extractFlashFromHeaders request

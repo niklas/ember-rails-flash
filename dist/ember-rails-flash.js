@@ -11,7 +11,7 @@
     message: ''
   });
 
-  Ember.Rails.FlashMessagesController = Ember.ArrayController.extend({
+  Ember.Rails.FlashMessagesController = Ember.Controller.extend({
     init: function() {
       var _this = this;
       this._super();

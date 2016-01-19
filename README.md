@@ -38,7 +38,7 @@ Now, you can use the provided controller directly in your templates or component
 
 ```handlebars
 <h1>My new App</h1>
-{{my-own-flash-list content=Ember.Rails.flashMessages}}
+{{my-own-flash-list content=Ember.Rails.flashMessages.content}}
 ```
 
 ### Enable flash messages for JSON responses
