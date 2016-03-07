@@ -10,7 +10,8 @@ module EmberRailsFlash
     def add_flash_to_header_if_xhr
       if request.xhr?
         flash.each do |severity, message|
-          response.headers["X-Flash-#{severity.to_s.classify}"] = HTMLEntities.new.encode(message, :basic, :decimal)
+          key = severity.to_s.underscore.gsub('_','-')
+          response.headers["X-Flash-#{key}"] = HTMLEntities.new.encode(message, :basic, :decimal)
         end
         # make sure flash does not appear on the next page
         flash.discard
