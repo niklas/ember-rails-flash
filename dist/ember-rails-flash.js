@@ -26,10 +26,10 @@
       _results = [];
       for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
         header = _ref1[_i];
-        if (m = header.match(/^X-Flash-([^:]+)/)) {
+        if (m = header.toLowerCase().match(/^x-flash-([^:]+)/)) {
           _results.push(this.createMessage({
             severity: m[1].underscore(),
-            message: request.getResponseHeader("X-Flash-" + m[1])
+            message: request.getResponseHeader(m[0])
           }));
         } else {
           _results.push(void 0);
