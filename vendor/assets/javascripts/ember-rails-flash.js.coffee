@@ -12,8 +12,8 @@ Ember.Rails.FlashMessagesController = Ember.Controller.extend
   extractFlashFromHeaders: (request)->
     headers = request.getAllResponseHeaders()
     for header in headers.split(/\n/)
-      if m = header.match /^X-Flash-([^:]+)/
-        @createMessage severity: m[1].underscore(), message: request.getResponseHeader("X-Flash-#{m[1]}")
+      if m = header.toLowerCase().match /^x-flash-([^:]+)/
+        @createMessage severity: m[1].underscore(), message: request.getResponseHeader(m[0])
 
   createMessage: (args) ->
     message = Ember.Rails.FlashMessage.create args

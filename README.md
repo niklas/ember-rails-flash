@@ -25,7 +25,7 @@ end
 
 ### Asset Pipeline
 
-Add the javascripts to your asset pipeline (for example application.js), preferrably after ember itself.
+Add the javascripts to your asset pipeline (for example application.js), preferably after ember itself.
 ```css
 //= require handlebars
 //= require ember
@@ -51,7 +51,7 @@ EmberRailsFlash.enable_flash_responder 'json'
 
 ### ember-cli
 
-First, install this repo throw bower:
+First, install this repo through bower:
 
 ```bash
 ember install:bower https://github.com/niklas/ember-rails-flash.git
@@ -86,7 +86,7 @@ Still learning, please educate me - SRSLY.
 
 For example like &#252;
 
-We transport the flash messages thorugh HTTP headers, which only support ASCII
+We transport the flash messages through HTTP headers, which only support ASCII
 encoding. So we encode the messages to HTML entities. To properly display these
 in your views, please use triple mustaches `{{{message}}}` for handlebars,
 triple equal signs `=== message` in Emblem or any other way which does not try
@@ -100,4 +100,3 @@ Caveat: You may now insert arbitrary JS and HTML in your flash messages.
 Feel free to open an issue ticket if you find something that could be improved.
 
 This project rocks and uses GPL-3 as license.
-
